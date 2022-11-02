@@ -1,0 +1,132 @@
+@use '../abstracts' as *
+
+$clr-neutral-100: hsl(0,0%,100%)
+$clr-neutral-400: hsl(0,0%,87%)
+$clr-neutral-600: hsl(0,0%,65%)
+$clr-neutral-800: hsl(0,0%,21%)
+$clr-neutral-900: hsl(0,0%,0%)
+$clr-accent-400: hsl(47, 100%, 47%)
+$clr-accent-600: hsl(47, 100%, 31%)
+$fw-bold: 700
+$fw-normal: 400
+
+body
+    font-family: 'Roboto', sans-serif
+
+a
+    color: $clr-neutral-100
+    &:hover
+        text-decoration: underline
+        cursor: pointer
+
+.bg-black
+    width: 100vw
+    background: $clr-neutral-900
+
+header
+    max-width: rem(1440)
+    margin-inline: auto
+    background: $clr-neutral-900
+
+    .nav__primary
+        padding: rem(16) rem(28)
+        +flex(row, space-between, center)
+        &__logo
+            
+            font-weight: $fw-bold
+            font-size: rem(24)
+        &__list
+            +flex(row, center, center, rem(32))
+            &__item
+                &__link
+                    font-size: rem(16)
+                    font-weight: $fw-bold
+                    &:hover
+                        text-decoration: underline
+
+
+section
+    max-width: rem(1440)
+    margin-inline: auto
+
+.hero
+    margin-block-end: rem(80)
+    &__img
+        position: relative
+        width: 100%
+        max-height: rem(720)
+        aspect-ratio: 2 / 1
+        background-clip: cover
+    &__heading
+        font-size: rem(96)
+        color: $clr-neutral-100
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+
+.dropdown
+    margin-block-end: rem(80)
+    &__bar
+        margin-inline: auto
+        margin-block-end: rem(80)
+        max-width: rem(1260)
+        background: $clr-neutral-400
+        border: 2px solid $clr-neutral-600
+        &__text
+            color: $clr-neutral-800
+            font-size: rem(24)
+            font-weight: $fw-bold
+            padding: rem(22) rem(26)
+    &__content
+        margin-block-end: rem(54)
+        &:last-of-type
+            margin-block-end: rem(80)
+        +flex(row, space-between, center)
+        max-width: rem(1200)
+        margin-inline: auto
+        &__body
+            +flex(row, space-evenly, flex-start, rem(50))
+            &__img
+                display: block
+            &__text
+                +flex(column, default, flex-start, rem(24))
+                &__heading
+                    line-height: 1
+                    font-size: rem(36)
+                    font-weight: $fw-bold
+                &__para
+                    font-size: rem(16)
+                    font-weight: $fw-bold
+        &__link
+            background: $clr-accent-400
+            border: 2px solid $clr-accent-600
+            font-size: rem(24)
+            font-weight: $fw-bold
+            padding: rem(16) rem(44)
+            &:hover
+                background: darken($clr-accent-400, 5%)
+                text-decoration: none
+
+footer
+    max-width: rem(1440)
+    +flex(row, flex-start, flex-start)
+    img
+        padding: rem(78) rem(56) rem(78) rem(120)
+    .nav__secondary
+        height: 100%
+        padding-block-start: rem(72)
+        +flex(row, default, default, rem(64))
+    
+        &__column
+            +grid(1fr)
+            color: $clr-neutral-100
+            flex: 1 1 100%
+            h3
+                line-height: 1.125
+                font-size: rem(36)
+                font-weight: $fw-bold
+                margin-block-end: rem(32)
+            ul
+                li
+                    margin-block-end: rem(12)

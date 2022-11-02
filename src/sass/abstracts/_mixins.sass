@@ -1,0 +1,12 @@
+@mixin grid($columns, $rows: auto, $gap: 0)
+    display: grid
+    grid-template-columns: $columns
+    grid-template-areas: $rows
+    gap: $gap
+
+@mixin flex($direction: row, $justify: default, $align: default, $gap: 0)
+    display: flex
+    flex-direction: $direction
+    justify-content: $justify
+    align-items: $align
+    gap: $gap
