@@ -62,6 +62,17 @@
       "oAP" : "\/dist\/index.html",
       "oF" : 0
     },
+    "\/src\/js\/index.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/dist\/js\/index-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
     "\/src\/sass\/abstracts\/_functions.sass" : {
       "aP" : 0,
       "bl" : 0,

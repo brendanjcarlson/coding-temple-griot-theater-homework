@@ -1,7 +1,12 @@
 @use 'functions' as *
 
-$breakpoints-up: (medium: em(700), large: em(900), xlarge: em(1440))
+$breakpoints-up: (medium: em(768), large: em(992), xlarge: em(1200))
+$breakpoints-down: (small: em(575.98), medium: em(767.98), large: em(991.98))
 
-@mixin mq($size)
+@mixin mq-up($size)
     @media (min-width: map-get($breakpoints-up, $size))
+        @content
+
+@mixin mq-down($size)
+    @media (max-width: map-get($breakpoints-down, $size))
         @content
