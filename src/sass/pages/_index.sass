@@ -69,13 +69,13 @@ header
 
         &__list
             +flex(row, flex-end, center, rem(32))
+            +mq-down(medium)
+                display: none`
             &__item
                 &__link
                     color: $clr-neutral-100
                     &:hover
                         text-decoration: underline
-            +mq-down(medium)
-                display: none
 
 section:not(:first-of-type)
     width: min(95%, rem(1440))
@@ -148,6 +148,7 @@ section:not(:first-of-type)
                     &:not(:last-of-type)
                         margin-block-end: rem(12)
             &__link
+                text-align: center
                 color: $clr-neutral-100
                 background: $clr-accent-400
                 border: 1px solid $clr-accent-600
@@ -195,4 +196,3 @@ footer
                         font-size: $fs-nav-secondary-link
                         &:hover
                             text-decoration: underline
-    
