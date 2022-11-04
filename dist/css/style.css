@@ -161,6 +161,11 @@ section:not(:first-of-type) {
   margin-block-end: 2rem;
   position: relative;
 }
+@media (min-width: 48em) {
+  .hero {
+    margin-block-end: 5.125rem;
+  }
+}
 .hero__heading {
   color: hsl(0deg, 0%, 100%);
   font-size: clamp(3rem, 1.875rem + 5vw, 6rem);
