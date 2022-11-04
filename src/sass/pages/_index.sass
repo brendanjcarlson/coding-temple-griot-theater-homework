@@ -12,6 +12,10 @@ $fw-bold: 700
 $fs-hero-heading: clamp(rem(48), rem(30) + 5vw, rem(96))
 $fs-dropdown-bar-text: clamp(rem(18), rem(10) + 2vw, rem(24))
 
+$fs-dropdown-content-heading: clamp(rem(20), rem(16) + 1.5vw, rem(36))
+$fs-dropdown-content-body: clamp(rem(13), rem(8) + 1vw, rem(16))
+
+$fs-nav-secondary-link: clamp(rem(12), rem(10) + .75vw, rem(20))
 
 body
     font-family: 'Roboto', sans-serif
@@ -99,12 +103,17 @@ section:not(:first-of-type)
 .dropdown
     max-width: rem(1260)
     margin-inline: auto
+    margin-block-end: rem(80)
     &__bar
+        width: 95%
+        margin-inline: auto
         background: $clr-neutral-400
         border: 1px solid $clr-neutral-600
         cursor: pointer
         +flex(row, flex-start, center)
-        margin-block-end: rem(32)
+        margin-block-end: rem(48)
+        +mq-up(medium)
+            margin-block-end: rem(82)
         &:hover
             background: darken($clr-neutral-400, 8%)
 
@@ -116,6 +125,72 @@ section:not(:first-of-type)
     &__content
         margin-inline: auto
         max-width: rem(1200)
+        margin-block-end: rem(54)
         +flex(column, default, flex-start)
+        
         &__body
-            +flex(column, center, center)
+            +flex(column, center, flex-start, rem(16))
+            margin-inline: auto
+            margin-block-end: rem(24)
+            +mq-up(medium)
+                width: min(90%, rem(1200))
+                +flex(row, flex-start, flex-start, rem(50))
+            &__text
+                +mq-up(medium)
+                    column-span: 2
+                &__heading
+                    font-size: $fs-dropdown-content-heading
+                    margin-block-end: rem(8)
+                &__para
+                    font-size: $fs-dropdown-content-body
+                    &:not(:last-of-type)
+                        margin-block-end: rem(12)
+            &__link
+                color: $clr-neutral-100
+                background: $clr-accent-400
+                border: 1px solid $clr-accent-600
+                padding: rem(10) rem(20)
+                +mq-up(medium)
+                    margin-left: auto
+                    margin-block: auto
+
+footer
+    background: $clr-neutral-900
+    color: $clr-neutral-100
+    justify-content: center
+    padding: rem(78)
+    +flex(row)
+
+    .nav__secondary
+        +flex(row, flex-start, flex-start, rem(32))
+        flex-wrap: wrap
+        +mq-down(small)
+            +flex(column, center, flex-start, rem(32))
+
+        &__map
+            display: none
+            +mq-up(large)
+                display: block
+                margin-inline: auto
+                padding-inline-end: rem(14)
+                height: rem(270)
+
+        &__column
+            &__heading
+                font-size: $fs-dropdown-content-heading
+                line-height: 1
+                margin-block-end: rem(12)
+                +mq-up(medium)
+                    margin-block-end: rem(20)
+            &__list
+                &__item
+                    margin-block-end: rem(8)
+                    font-size: $fs-nav-secondary-link
+                    +mq-up(medium)
+                        margin-block-end: rem(12)
+                    &__link
+                        color: $clr-neutral-100
+                        font-size: $fs-nav-secondary-link
+                        &:hover
+                            text-decoration: underline
+    
