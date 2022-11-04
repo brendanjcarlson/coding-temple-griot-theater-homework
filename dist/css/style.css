@@ -291,7 +291,7 @@ footer .nav__secondary {
 footer .nav__secondary__map {
   display: none;
 }
-@media (min-width: 62em) {
+@media (min-width: 67.1875em) {
   footer .nav__secondary__map {
     display: block;
     margin-inline: auto;
